@@ -24,7 +24,25 @@ def histogram(img):
     TypeError
         if the image isn't the ``numpy.uint8`` data type
     '''
-    raise NotImplementedError('Implement this function/method.')
+    # Declare function variables
+    H = len(img)        # Number of Rows
+    W = len(img[0])     # Number of columns
+    hist = [0] * 255    # Histogram initialized
+
+    # Check if image is greyscale
+    if img.dtype != np.uint8:
+        raise TypeError('Can only work on 8-bit images.')
+
+    # Check if image is numpy.unit8
+    if img.ndim != 2:
+        raise ValueError('Convert colour image to greyscale before processing.')
+
+    # Iterate over image pixels and set histgram array
+    for i in range(H):
+        for j in range(W):
+            hist[int(img[H][W])] += 1
+
+    return hist
 
 
 def estimate_brightness(img):
@@ -48,8 +66,17 @@ def estimate_brightness(img):
     TypeError
         if the image isn't 8bpc
     '''
+    # Declare function variables
+    H = len(img)        # Number of Rows
+    W = len(img[0])     # Number of columns
+    num_pixels = W * H  # Total number of pixels in image
+    avg = 0             # Average pixel brightness
+
+    # Check if image is greyscale
     if img.dtype != np.uint8:
         raise TypeError('Can only work on 8-bit images.')
+
+    # Check if image is numpy.unit8
     if img.ndim != 2:
         raise ValueError('Convert colour image to greyscale before processing.')
 
