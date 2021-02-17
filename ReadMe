@@ -1,0 +1,9 @@
+Issues:
+
+1.  Histogram function description
+
+The description for the histogram function in the analysis.py file is inconsistent.
+It says that a value Error should be raised if the Image is NOT grayscale, but it
+also tells you how to deal with color images (produce three channels for the
+histogram return matrix).  I will go with the color handling option because it
+is simply better, but you must fix this issue in the source code!
