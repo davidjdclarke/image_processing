@@ -1,9 +1,17 @@
 Issues:
 
-1.  Histogram function description
+1.  Histogram Function Description
 
 The description for the histogram function in the analysis.py file is inconsistent.
 It says that a value Error should be raised if the Image is NOT grayscale, but it
 also tells you how to deal with color images (produce three channels for the
 histogram return matrix).  I will go with the color handling option because it
 is simply better, but you must fix this issue in the source code!
+
+2.  Poor Programming Structure:
+
+In the point_operations.py file why do the functions 'adjust_contrast', 'adjust_brightness',
+'adjust_exposure' and 'log_transform' all have different arguments.  This should be
+implemented as a Python Class.  Again, as in the first lab I think that more freedom
+needs to be given to the students as to how they desire to design their code.  Bear
+in mind that also means that the TA(s) need to actually perform LIVE demo(s)!
