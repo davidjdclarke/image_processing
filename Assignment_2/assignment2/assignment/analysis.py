@@ -29,11 +29,11 @@ def histogram(img):
     W = len(img[0])     # Number of columns
     hist = [0] * 255    # Histogram initialized
 
-    # Check if image is greyscale
+    # Check if image is numpy.unit8
     if img.dtype != np.uint8:
         raise TypeError('Can only work on 8-bit images.')
 
-    # Check if image is numpy.unit8
+    # Check if image is greyscale
     if img.ndim != 2:
         raise ValueError('Convert colour image to greyscale before processing.')
 

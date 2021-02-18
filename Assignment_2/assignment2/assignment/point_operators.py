@@ -27,7 +27,25 @@ def apply_lut(img, lut):
     TypeError
         if either the LUT or images are not 8bpc
     '''
-    raise NotImplementedError('Implement this function/method.')
+    # Declare function variables
+    H = len(img)        # Number of Rows
+    W = len(img[0])     # Number of columns
+
+    # Apply LUT to Image
+    if img.ndim == 2:
+        # Greyscale Image
+        for i in range(H):
+            for j in range(W):
+                img[H][W] = lut[img[H][W]]
+    elif img.ndim == 3:
+        number_of_channels = img.shape()[2]
+        # Color (multi-channel) Image
+        for i in range(H):
+            for j in range(W):
+                for channel in range(number_of_channels)
+                    img[H][W][channel] = lut[img[H][W][channel]]
+
+    return img
 
 
 def adjust_brightness(offset):
