@@ -43,7 +43,7 @@ def apply_lut(img, lut):
         for i in range(H):
             for j in range(W):
                 for channel in range(number_of_channels)
-                    img[H][W][channel] = lut[img[H][W][channel]]
+                    img[H][W][channel] = np.uint8(lut[img[H][W][channel]])
 
     return img
 
