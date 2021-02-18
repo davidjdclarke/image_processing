@@ -62,7 +62,16 @@ def adjust_brightness(offset):
     numpy.ndarray
         a 256-element LUT that can be provided to ``apply_lut()``
     '''
-    raise NotImplementedError('Implement this function/method.')
+    # Initialize variables
+    num_values = 255
+    hist = [0] * num_values
+
+    # Create Offest LUT
+    for i in range(num_values):
+        pixel_offset = i + offset
+        hist[i] = np.uint8(max(min(pixel_offset, num_values)))
+
+    return hist
 
 
 def adjust_contrast(scale, hist):
